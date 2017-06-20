@@ -10,9 +10,9 @@ class pedidos extends db
   {
     parent::__construct()
   }
-  public function crearPedido($nombre,$apellidos,$talla,$numero,$precio){
+  public function crearPedido($nombre,$apellidos,$talla,$numero,$precio,$sexo){
     if($this->getErrorConexion()==false){
-      $sqlInsercion="INSERT INTO pedidos(id,nombre,apellidos,talla,numero,precio) Values(NULL,'".$nombre."','".$apellidos."','".$talla."','".$numero."','".$precio."')";
+      $sqlInsercion="INSERT INTO pedidos(id,nombre,apellidos,talla,numero,sexo,precio) Values(NULL,'".$nombre."','".$apellidos."','".$talla."','".$numero."','".$sexo."','".$precio."')";
       $this->conexion->query($sqlInsercion);
       $sql="SELECT * FROM pedidos ORDER BY id  DESC LIMIT 1 ";
       return $resultado=$this->realizarConsulta($sql);
